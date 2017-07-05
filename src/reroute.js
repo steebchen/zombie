@@ -55,7 +55,10 @@ function enableRerouting() {
 
   const connect = Net.Socket.prototype.connect;
   Net.Socket.prototype.connect = function(options, callback) {
-    if (Array.isArray(options) && options.some(opts => findTargetPort(opts.host, opts.port))) {
+    if (Array.isArray(options) && options.some(opts => {
+      opts = opts || {}
+      return findTargetPort(opts.host, opts.port)
+    })) {
       // we hackily update the array in place, because the array has already been extended with
       // extra methods
       options.forEach((opts, i) => {

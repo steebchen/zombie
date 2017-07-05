@@ -31,11 +31,11 @@ module.exports = class Console {
   }
 
   debug(...args) {
-    this.browser.emit('console', 'debug', format(...args));
+    //this.browser.emit('console', 'debug', format(...args));
   }
 
   error(...args) {
-    this.browser.emit('console', 'error', format(...args));
+    //this.browser.emit('console', 'error', format(...args));
   }
 
   group() {
@@ -46,15 +46,15 @@ module.exports = class Console {
   }
 
   dir(object) {
-    this.browser.emit('console', 'log', inspect(object));
+    //this.browser.emit('console', 'log', inspect(object));
   }
 
   info(...args) {
-    this.browser.emit('console', 'log', format(...args));
+    //this.browser.emit('console', 'log', format(...args));
   }
 
   log(...args) {
-    this.browser.emit('console', 'log', format(...args));
+    //this.browser.emit('console', 'log', format(...args));
   }
 
   time(name) {
@@ -77,7 +77,7 @@ module.exports = class Console {
   }
 
   warn(...args) {
-    this.browser.emit('console', 'log', format(...args));
+    //this.browser.emit('console', 'log', format(...args));
   }
 
 };
